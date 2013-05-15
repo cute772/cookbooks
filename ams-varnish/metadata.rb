@@ -1,9 +1,8 @@
-name              "varnish"
-maintainer        "Opscode, Inc."
-maintainer_email  "cookbooks@opscode.com"
-license           "Apache 2.0"
+name              "ams-varnish"
+maintainer        "RealEyes Media"
+maintainer_email  "john@realeyes.com"
 description       "Installs and configures varnish"
-version           "0.9.4"
+version           "0.0.1"
 
 depends "apt"
 

@@ -6,10 +6,9 @@ Installs and configures varnish with a default vcl template for Adobe Media Serv
 Requirements
 ============
 
-## Platform:
+## Platform
 
-Tested on:
-
+Tested on:  
 * Ubuntu 12.04 64
 
 Attributes
@@ -52,6 +51,7 @@ Recipes
 =======
 
 default  
+
 -------
 
 Installs the varnish package, manages the default varnish
