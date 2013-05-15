@@ -1,7 +1,7 @@
 Description
 ===========
 
-Installs and configures varnish.
+Installs and configures varnish with a default vcl template for Adobe Media Server HDS and HLS caching.
 
 Requirements
 ============
@@ -10,9 +10,7 @@ Requirements
 
 Tested on:
 
-* Ubuntu 11.10
-* Ubuntu 10.04
-* Debian 6.0
+* Ubuntu 12.04 64
 
 Attributes
 ==========
@@ -45,24 +43,19 @@ Attributes
 
 If you don't specify your own vcl_conf file, then these attributes are used in the cookbook `default.vcl` template:
 
-* `node['varnish']['backend_host']` = Host to serve/cache content from (localhost)
-* `node['varnish']['backend_port']` = Port on backend host to access (8080)
+* `node['varnish']['backend_1_host']` = Host to serve/cache content from (localhost)
+* `node['varnish']['backend_1_port']` = Port on backend host to access (8134)
+* `node['varnish']['backend_2_host']` = Host to serve/cache content from (localhost)
+* `node['varnish']['backend_2_port']` = Port on backend host to access (80)
 
 Recipes
 =======
 
-default
+default  
 -------
 
 Installs the varnish package, manages the default varnish
 configuration file, and the init script defaults file.
-
-apt_repo
-------------
-
-If placed before the default recipe in the run list, the official
-Varnish project apt repository will offer access to more version and
-platform support.
 
 Usage
 =====
@@ -73,25 +66,9 @@ the `default.vcl.erb` and `ubuntu-default.erb` templates. By default
 the `custom-default.erb` is set up to run with the varnish defaults, and 
 a simple `default.vcl`.
 
-License and Author
-==================
+Author
+======
 
-Author:: Joe Williams <joe@joetify.com>
+RealEyes Media &copy; 2013
 
-Author:: Lew Goettner <lew@goettner.net>
-
-Contributor:: Patrick Connolly <patrick@myplanetdigital.com>
-
-Copyright:: 2008-2009, Joe Williams
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+Based on recipe from: https://github.com/opscode-cookbooks/varnish
