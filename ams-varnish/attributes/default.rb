@@ -30,6 +30,6 @@ default['varnish']['storage_file'] = '/var/lib/varnish/$INSTANCE/varnish_storage
 default['varnish']['storage_size'] = '1G'
 
 default['varnish']['backend_1_host'] = 'office.realeyes.com'
-default['varnish']['backend_1_host'] = '8134'
+default['varnish']['backend_1_port'] = '8134'
 default['varnish']['backend_2_host'] = 'fms.realeyes.com'
-default['varnish']['backend_2_host'] = '80'
+default['varnish']['backend_2_port'] = '80'

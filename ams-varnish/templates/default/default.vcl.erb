@@ -7,9 +7,9 @@
 ## Backends
 ##################################################
  
-backend ams2 {
-    .host = "<%= node['varnish']['backend_host'] %>";
-    .port = "<%= node['varnish']['backend_port'] %>";
+backend ams1 {
+    .host = "<%= node['varnish']['backend_1_host'] %>";
+    .port = "<%= node['varnish']['backend_1_port'] %>";
     .probe = {
         .url = "/";
         .timeout = 150 ms;
