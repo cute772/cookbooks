@@ -18,22 +18,7 @@
 # limitations under the License.
 #
 
-pkgs = value_for_platform(
-  [ "centos", "redhat", "fedora" ] => {
-    "default" => %w{ varnish-release varnish }
-  },
-  [ "debian", "ubuntu" ] => {
-    "default" => %w{ varnish }
-  }
-)
-
-pkgs.each do |pkg|
-  package pkg do
-    action :install
-  end
-end
-
-# package "varnish"
+package "varnish"
 
 template "#{node['varnish']['dir']}/#{node['varnish']['vcl_conf']}" do
   source node['varnish']['vcl_source']
