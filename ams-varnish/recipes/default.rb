@@ -18,6 +18,12 @@
 # limitations under the License.
 #
 
+execute "apt-get-update" do
+  command "sudo apt-get update"
+  ignore_failure true
+  action :nothing
+end
+
 if platform?("ubuntu", "debian")
   include_recipe "apt"
   apt_repository "varnish-cache.org" do
@@ -26,7 +32,7 @@ if platform?("ubuntu", "debian")
     components ["main"]
     key "http://repo.varnish-cache.org/debian/GPG-key.txt"
     deb_src true
-    #notifies :run, resources(:execute => "apt-get update"), :immediately
+    notifies :run, resources(:execute => "apt-get-update"), :immediately
   end
 end
 
