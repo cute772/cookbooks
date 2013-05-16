@@ -31,5 +31,5 @@ default['varnish']['storage_size'] = '1G'
 
 default['varnish']['backend_1_host'] = 'ec2-54-245-129-209.us-west-2.compute.amazonaws.com'
 default['varnish']['backend_1_port'] = '80'
-default['varnish']['backend_2_host'] = 'office.realeyes.com'
-default['varnish']['backend_2_port'] = '8134'
+default['varnish']['backend_2_host'] = 'ec2-54-245-129-209.us-west-2.compute.amazonaws.com'
+default['varnish']['backend_2_port'] = '80'
