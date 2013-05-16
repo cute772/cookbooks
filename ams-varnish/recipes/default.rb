@@ -18,24 +18,6 @@
 # limitations under the License.
 #
 
-execute "apt-get-update" do
-  command "sudo apt-get update"
-  ignore_failure true
-  action :nothing
-end
-
-if platform?("ubuntu", "debian")
-  include_recipe "apt"
-  apt_repository "varnish-cache.org" do
-    uri "http://repo.varnish-cache.org/#{:platform}/"
-    distribution node['lsb']['codename']
-    components ["main"]
-    key "http://repo.varnish-cache.org/debian/GPG-key.txt"
-    deb_src true
-    notifies :run, resources(:execute => "apt-get-update"), :immediately
-  end
-end
-
 pkgs = value_for_platform(
   [ "centos", "redhat", "fedora" ] => {
     "default" => %w{ varnish-release varnish }
