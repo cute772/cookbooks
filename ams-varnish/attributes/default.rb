@@ -31,5 +31,5 @@ default['varnish']['storage_size'] = '1G'
 
 default['varnish']['backend_1_host'] = '54.214.232.134'
 default['varnish']['backend_1_port'] = '80'
-default['varnish']['backend_2_host'] = 'office.realeyes.com'
+default['varnish']['backend_2_host'] = '54.214.232.134'
 default['varnish']['backend_2_port'] = '80'
